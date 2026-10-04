@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying paper."
+title: "swarmkit: SAMA signature detection from Swarm magnetic field data"
+version: 0.1.0
+date-released: 2026-10-04
+license: Apache-2.0
+repository-code: "https://github.com/Nat699/swarmkit"
+
+authors:
+  - family-names: "Nascimento Junior"
+    given-names: "Natanael Antonio"
+    orcid: "https://orcid.org/0009-0009-4656-8957"
+    email: "natanaelanjr@gmail.com"
+
+preferred-citation:
+  type: article
+  title: "Threshold Activation of the South Atlantic Magnetic Anomaly Signature in Swarm Magnetic Field Measurements During Geomagnetic Storms"
+  authors:
+    - family-names: "Nascimento Junior"
+      given-names: "Natanael Antonio"
+      orcid: "https://orcid.org/0009-0009-4656-8957"
+  journal: "Geophysical Research Letters"
+  year: 2026
+  notes: "Submitted (manuscript ID 2026GL127373)"
