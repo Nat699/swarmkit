@@ -1,28 +1,20 @@
-# swarmkit
+# swarmkit — SAMA 2D Structure Analysis
 
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+Análise da assinatura geomagnética da Anomalia Magnética do Atlântico Sul (SAMA) em dados do Swarm (ESA), medida **durante** tempestades geomagnéticas.
 
-**SAMA signature detection from Swarm magnetic field data.**
+## Achado Principal
+A SAMA apresenta uma **estrutura 2D anisotrópica interna** documentada por 1.788 passagens do Swarm (2015–2024):
+- **Pico em S-Centro:** skew +1.158 [IC 95%: 1.120–1.223]
+- **Vale em S-Oeste:** skew +0.435 [IC 95%: 0.395–0.902]
+- **Classificação (SAMA vs Controles):** AUC = 1.0000 (6 features). Skewness sozinha = 0.9817.
 
-`swarmkit` is a Python library for detecting and quantifying the signature of the South Atlantic Magnetic Anomaly (SAMA) in scalar magnetic field data from ESA's Swarm satellites during geomagnetic storms.
+## O que NÃO foi confirmado (Refutação)
+Testes de amplificação durante tempestades (threshold em DST ≈ −49 nT) **não se sustentaram**:
+- r(skew, DST) dentro da SAMA: +0.05 (p = 0.49)
+- Modelo combinado: DST t = +0.16 (n.s.)
+- Conclusão: O efeito é geográfico (campo interno), não modulado por tempestade.
 
-## Key result
-
-The SAMA amplifies the skewness of the scalar magnetic field `F` during storms, with a **threshold activation at DST ≈ −49 nT**. The effect is satellite-invariant (Swarm A and B), absent during quiet times, and specific to the anomaly (verified against a control region at the same latitude).
-
-| Metric | Value |
-|---|---|
-| Classification AUC (5-fold CV) | **0.9993 ± 0.0008** |
-| Δskew (SAMA − control, storm) | **+0.71** |
-| Δskew (SAMA − control, calm) | +0.08 |
-| Threshold | DST ≈ −49 nT |
-| ΔAIC (step vs. linear) | **+48.6** |
-
-This work is described in the manuscript submitted to *Geophysical Research Letters* (2026GL127373).
-
-## Installation
-
-```bash
-pip install git+https://github.com/Nat699/swarmkit.git
+## Status
+- Paper original (GRL 2026GL127373) **retirado**.
+- Relatório Técnico disponível para INPE/EMBRACE.
+- Paper em preparação para *Annales Geophysicae*.
