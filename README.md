@@ -1,20 +1,32 @@
-# swarmkit — SAMA 2D Structure Analysis
+# swarmkit — SAMA Tail Amplification Analysis
 
-Análise da assinatura geomagnética da Anomalia Magnética do Atlântico Sul (SAMA) em dados do Swarm (ESA), medida **durante** tempestades geomagnéticas.
+Análise da assinatura geomagnética da Anomalia Magnética do Atlântico Sul (SAMA) em dados do Swarm (ESA).
 
-## Achado Principal
-A SAMA apresenta uma **estrutura 2D anisotrópica interna** documentada por 1.788 passagens do Swarm (2015–2024):
-- **Pico em S-Centro:** skew +1.158 [IC 95%: 1.120–1.223]
-- **Vale em S-Oeste:** skew +0.435 [IC 95%: 0.395–0.902]
-- **Classificação (SAMA vs Controles):** AUC = 1.0000 (6 features). Skewness sozinha = 0.9817.
+## Achado Principal (Confirmado)
 
-## O que NÃO foi confirmado (Refutação)
-Testes de amplificação durante tempestades (threshold em DST ≈ −49 nT) **não se sustentaram**:
-- r(skew, DST) dentro da SAMA: +0.05 (p = 0.49)
-- Modelo combinado: DST t = +0.16 (n.s.)
-- Conclusão: O efeito é geográfico (campo interno), não modulado por tempestade.
+A SAMA apresenta uma **amplificação da cauda** na distribuição do campo magnético residual (\(F - 	ext{CHAOS(core+crust)}\)) durante tempestades geomagnéticas.
+
+- **Efeito primário:** +0.119 (SE: 0.007, n = 151 tempestades)
+- **Placebo (rótulos permutados):** nulo (-0.0003, IC95%: [-0.004, +0.004])
+- **Especificidade:** O efeito é exclusivo da SAMA, não ocorrendo nas regiões controle (Pacífico Central, Índico Sul, Atlântico Leste).
+- **Robustez:** Consistente entre satélites A e B e estável em leave-one-out.
+
+## Metodologia
+
+1. **Resíduo:** Subtração do campo interno (CHAOS-7 core + crust) do campo observado.
+2. **Métrica:** Fração de amostras acima do limiar de calmaria (não skewness linear).
+3. **Pareamento:** Cada tempestade é comparada com duas janelas de calmaria.
+4. **Unidade Independente:** Tempestade (não janela).
+
+## O que foi Refutado
+
+A hipótese original de que a SAMA amplifica a **skewness** linear durante tempestades não se sustentou. O efeito está especificamente na cauda da distribuição do resíduo, não no terceiro momento global.
+
+## Reprodução
+
+O pipeline é 100% reprodutível (hashes SHA-256, seed fixa, 151 tempestades pareadas).
 
 ## Status
-- Paper original (GRL 2026GL127373) **retirado**.
-- Relatório Técnico disponível para INPE/EMBRACE.
-- Paper em preparação para *Annales Geophysicae*.
+
+- Artigo em preparação para submissão ao *Annales Geophysicae*.
+- Corpus e código abertos (MIT).

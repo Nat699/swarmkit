@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: swarmkit — SAMA 2D structure analysis
+title: swarmkit — SAMA Tail Amplification Analysis
 message: If you use this software, please cite it.
 type: software
 authors:
@@ -8,8 +8,8 @@ authors:
     affiliation: Independent Researcher
     email: natanaelanjr@gmail.com
     orcid: https://orcid.org/0009-0009-4656-8957
-version: 2.1.0
-date-released: 2026-10-17
+version: 2.2.0
+date-released: 2026-10-19
 repository-code: https://github.com/Nat699/swarmkit
 url: https://github.com/Nat699/swarmkit
 license: MIT
